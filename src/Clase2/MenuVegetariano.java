@@ -4,8 +4,7 @@ public class MenuVegetariano extends Menu{
     int especias;
     int salsasVegetarianas;
 
-    public MenuVegetariano(float precioBase, int especias, int salsasVegetarianas) {
-        super(precioBase);
+    public MenuVegetariano(int especias, int salsasVegetarianas) {
         this.especias = especias;
         this.salsasVegetarianas = salsasVegetarianas;
     }
@@ -28,6 +27,12 @@ public class MenuVegetariano extends Menu{
 
     @Override
     public double calcularPrecio() {
-        return super.calcularPrecio() + 0.01*this.especias + 2*this.salsasVegetarianas;
+        double precioSinEspecias = super.calcularPrecio() + 2*this.salsasVegetarianas;
+        return precioSinEspecias + precioSinEspecias*0.01*especias;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu Vegetariano con " + this.especias + " especias y "+ this.salsasVegetarianas + " salas vegetarianas.";
     }
 }

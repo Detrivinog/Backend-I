@@ -1,9 +1,14 @@
 package Clase2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Empleado {
     List<Menu> productos;
+
+    public Empleado() {
+        this.productos = new ArrayList<>();
+    }
 
     public double calcularCosto(){
         double valorTotal = 0;
@@ -13,18 +18,17 @@ public class Empleado {
         return valorTotal;
     }
 
-    public void armarPaquete(Menu menu){
-        productos.add(menu);
+    public void armarPaquete(List<Menu> productos){
+        this.productos = productos;
     }
 
     public void mostrarPedido(){
+        System.out.println("El pedido es: ");
         for (Menu x:productos) {
-            System.out.println("El pedido es: ");
-            System.out.println(" - "+x);
+            System.out.println(" - "+x.toString());
         }
-    }
 
-    public void mostrarCosto() {
         System.out.println("El costo total es "+calcularCosto()+ " pesos.");
     }
+
 }

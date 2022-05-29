@@ -1,21 +1,24 @@
 package Clase2;
 
 public abstract class Menu {
-    private float precioBase;
+    private double precioBase;
 
-    public Menu(float precioBase) {
-        this.precioBase = precioBase;
+    public Menu() {
+        this.precioBase = 10;
     }
 
-    public float getPrecioBase() {
+    public double getPrecioBase() {
         return precioBase;
     }
 
-    public void setPrecioBase(float precioBase) {
+    public void setPrecioBase(double precioBase) {
         this.precioBase = precioBase;
     }
 
     public double calcularPrecio(){
         return precioBase;
     }
+
+    @Override
+    public abstract String toString();
 }

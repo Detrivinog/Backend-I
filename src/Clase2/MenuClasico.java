@@ -1,7 +1,11 @@
 package Clase2;
 
 public class MenuClasico extends Menu{
-    public MenuClasico(float precioBase) {
-        super(precioBase);
+    public MenuClasico() {
+    }
+
+    @Override
+    public String toString() {
+        return "Menu clásico";
     }
 }
